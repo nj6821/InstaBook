@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.UUID;
 
 @Service
@@ -69,4 +71,14 @@ public class UserService {
         }
 
     }
+    public ArrayList<User> retrieveAll()
+    {
+        return userRepository.findAll();
+    }
+//    public ArrayList<User> retrieveByName(String firstName)
+//    {
+////        String firstName;
+//        return userRepository.findByName(firstName);
+//    }
+
 }

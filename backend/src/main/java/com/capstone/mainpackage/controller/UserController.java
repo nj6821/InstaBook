@@ -9,10 +9,14 @@ import com.capstone.mainpackage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 
 @CrossOrigin
 @RestController
+@Controller
 @RequestMapping("/api/userService")
 public class UserController {
     @Autowired
@@ -30,4 +34,18 @@ public class UserController {
         System.out.println(user);
         return signupResponse;
     }
+    @GetMapping("/getUsers")
+    public ArrayList<User> getAllUsers()
+    {
+        return userService.retrieveAll();
+    }
+//    @GetMapping("/getUserByName/{firstName}")
+//    public ArrayList<User> getUserByName(@PathVariable("firstName") String firstName)
+//    {
+//        ArrayList<User> ak=userService.retrieveByName(firstName);
+////        System.out.println(ak);
+////        return userService.retrieveByName(firstName);
+//        return ak;
+//    }
+
 }
