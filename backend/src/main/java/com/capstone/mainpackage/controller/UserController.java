@@ -30,4 +30,9 @@ public class UserController {
         System.out.println(user);
         return signupResponse;
     }
+
+    @GetMapping("/dummy")
+    public String dummyResponse(){
+        return "dummyResponse";
+    }
 }
