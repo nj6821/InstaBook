@@ -21,18 +21,13 @@ public class UserController {
     UserService userService;
     @PostMapping("/login")
     public LoginResponse save(@RequestBody LoginRequest loginRequest){
-        LoginResponse loginResponse = new LoginResponse();
-        loginResponse.setLoginStatus(true);
-        loginResponse.setMessage("testing");
-        System.out.println("test successful");
-        return loginResponse;
+        return userService.authenticate(loginRequest);
     };
 
     @PostMapping(value="/signup", consumes="application/json", produces="application/json")
     public SignUpResponse signup(@RequestBody User user){
         SignUpResponse signupResponse = userService.register(user);
         System.out.println(user);
-
         return signupResponse;
     }
 }
