@@ -39,13 +39,13 @@ public class UserController {
     {
         return userService.retrieveAll();
     }
-//    @GetMapping("/getUserByName/{firstName}")
-//    public ArrayList<User> getUserByName(@PathVariable("firstName") String firstName)
-//    {
-//        ArrayList<User> ak=userService.retrieveByName(firstName);
-////        System.out.println(ak);
-////        return userService.retrieveByName(firstName);
-//        return ak;
-//    }
+    @GetMapping("/getUserByName/{firstName}")
+    public ArrayList<User> getUserByName(@PathVariable("firstName") String firstName)
+    {
+        ArrayList<User> ak=userService.retrieveByName(firstName);
+//        System.out.println(ak);
+//        return userService.retrieveByName(firstName);
+        return ak;
+    }
 
 }
