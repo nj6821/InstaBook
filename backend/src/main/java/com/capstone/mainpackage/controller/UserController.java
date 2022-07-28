@@ -34,7 +34,7 @@ public class UserController {
         System.out.println(user);
         return signupResponse;
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
     @GetMapping("/getUsers")
     public ArrayList<User> getAllUsers()
     {
@@ -49,11 +49,4 @@ public class UserController {
         return ak;
     }
 
-=======
-
-    @GetMapping("/dummy")
-    public String dummyResponse(){
-        return "dummyResponse";
-    }
->>>>>>> 1efd6b3069b52d578ea0ef0172b4d610049cc071
 }
