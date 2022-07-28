@@ -1,14 +1,17 @@
 package com.capstone.mainpackage.model;
 
+import com.fasterxml.jackson.databind.DatabindException;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "post")
@@ -18,9 +21,9 @@ public class Post {
     private UUID postUserID;
     private String postTitle;
     private String postContent;
-    private Timestamp postDate;
+    private Date postDate;
     private String postImageURL;
     private ArrayList<UUID> postLikesUserID;
-    private ArrayList<UUID> postCommentUserID;
+    private ArrayList<UUID> postCommentID;
 
 }
