@@ -75,10 +75,15 @@ public class UserService {
     {
         return userRepository.findAll();
     }
-//    public ArrayList<User> retrieveByName(String firstName)
-//    {
-////        String firstName;
-//        return userRepository.findByName(firstName);
-//    }
+    public ArrayList<User> retrieveByName(String firstName)
+    {
+//        String firstName;
+        return userRepository.findByFirstName(firstName);
+    }
+    public ArrayList<User> retrieveByLastName(String lastName)
+    {
+//        String firstName;
+        return userRepository.findByLastName(lastName);
+    }
 
 }

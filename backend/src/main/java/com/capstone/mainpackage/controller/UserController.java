@@ -34,7 +34,7 @@ public class UserController {
         System.out.println(user);
         return signupResponse;
     }
-<<<<<<< HEAD
+//<<<<<<< HEAD
     @GetMapping("/getUsers")
     public ArrayList<User> getAllUsers()
     {
@@ -48,12 +48,13 @@ public class UserController {
 //        return userService.retrieveByName(firstName);
         return ak;
     }
-
-=======
-
-    @GetMapping("/dummy")
-    public String dummyResponse(){
-        return "dummyResponse";
+    @GetMapping("/getUserByLastName/{lastName}")
+    public ArrayList<User> getUserByLastName(@PathVariable("lastName") String lastName)
+    {
+        ArrayList<User> ak=userService.retrieveByLastName(lastName);
+//        System.out.println(ak);
+//        return userService.retrieveByName(firstName);
+        return ak;
     }
->>>>>>> 1efd6b3069b52d578ea0ef0172b4d610049cc071
+
 }
