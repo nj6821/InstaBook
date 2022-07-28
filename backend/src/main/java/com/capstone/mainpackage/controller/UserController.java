@@ -48,5 +48,13 @@ public class UserController {
 //        return userService.retrieveByName(firstName);
         return ak;
     }
+    @GetMapping("/getUserByLastName/{lastName}")
+    public ArrayList<User> getUserByLastName(@PathVariable("lastName") String lastName)
+    {
+        ArrayList<User> ak=userService.retrieveByLastName(lastName);
+//        System.out.println(ak);
+//        return userService.retrieveByName(firstName);
+        return ak;
+    }
 
 }

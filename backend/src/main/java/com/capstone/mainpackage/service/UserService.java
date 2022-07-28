@@ -80,5 +80,10 @@ public class UserService {
 //        String firstName;
         return userRepository.findByFirstName(firstName);
     }
+    public ArrayList<User> retrieveByLastName(String lastName)
+    {
+//        String firstName;
+        return userRepository.findByLastName(lastName);
+    }
 
 }
