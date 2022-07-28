@@ -1,9 +1,6 @@
 package com.capstone.mainpackage.controller;
 
-import com.capstone.mainpackage.model.LoginRequest;
-import com.capstone.mainpackage.model.LoginResponse;
-import com.capstone.mainpackage.model.SignUpResponse;
-import com.capstone.mainpackage.model.User;
+import com.capstone.mainpackage.model.*;
 import com.capstone.mainpackage.repository.UserRepository;
 import com.capstone.mainpackage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,20 +37,22 @@ public class UserController {
     {
         return userService.retrieveAll();
     }
-    @GetMapping("/getUserByName/{firstName}")
-    public ArrayList<User> getUserByName(@PathVariable("firstName") String firstName)
+//    @GetMapping("/getUserByName/{firstName}")
+//    public ArrayList<User> getUserByName(@PathVariable("firstName") String firstName)
+//    {
+//        ArrayList<User> ak=userService.retrieveByName(firstName);
+//        return ak;
+//    }
+//    @GetMapping("/getUserByLastName/{lastName}")
+//    public ArrayList<User> getUserByLastName(@PathVariable("lastName") String lastName)
+//    {
+//        ArrayList<User> ak=userService.retrieveByLastName(lastName);
+//        return ak;
+//    }
+    @PostMapping(value = "/getUserByName", consumes = "application/json", produces = "application/json")
+    public ArrayList<User> getUserByName(@RequestBody User demo)
     {
-        ArrayList<User> ak=userService.retrieveByName(firstName);
-//        System.out.println(ak);
-//        return userService.retrieveByName(firstName);
-        return ak;
-    }
-    @GetMapping("/getUserByLastName/{lastName}")
-    public ArrayList<User> getUserByLastName(@PathVariable("lastName") String lastName)
-    {
-        ArrayList<User> ak=userService.retrieveByLastName(lastName);
-//        System.out.println(ak);
-//        return userService.retrieveByName(firstName);
+        ArrayList<User> ak=userService.retrieveByName(demo.getFirstName());
         return ak;
     }
 

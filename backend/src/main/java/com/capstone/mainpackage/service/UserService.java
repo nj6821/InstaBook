@@ -78,12 +78,12 @@ public class UserService {
     public ArrayList<User> retrieveByName(String firstName)
     {
 //        String firstName;
-        return userRepository.findByFirstName(firstName);
+        return userRepository.findByFirstNameContaining(firstName);
     }
     public ArrayList<User> retrieveByLastName(String lastName)
     {
 //        String firstName;
-        return userRepository.findByLastName(lastName);
+        return userRepository.findByLastNameContaining(lastName);
     }
 
 }
