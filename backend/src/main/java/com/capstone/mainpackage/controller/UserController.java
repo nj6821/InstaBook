@@ -23,38 +23,12 @@ public class UserController {
     UserRepository userRepository;
     @Autowired
     UserService userService;
-    @PostMapping("/login")
-    public LoginResponse save(@RequestBody LoginRequest loginRequest){
-        return userService.authenticate(loginRequest);
-    };
 
     @PostMapping(value="/signup", consumes="application/json", produces="application/json")
     public SignUpResponse signup(@RequestBody User user){
         SignUpResponse signupResponse = userService.register(user);
         System.out.println(user);
         return signupResponse;
-    }
-//<<<<<<< HEAD
-    @GetMapping("/getUsers")
-    public ArrayList<User> getAllUsers()
-    {
-        return userService.retrieveAll();
-    }
-    @GetMapping("/getUserByName/{firstName}")
-    public ArrayList<User> getUserByName(@PathVariable("firstName") String firstName)
-    {
-        ArrayList<User> ak=userService.retrieveByName(firstName);
-//        System.out.println(ak);
-//        return userService.retrieveByName(firstName);
-        return ak;
-    }
-    @GetMapping("/getUserByLastName/{lastName}")
-    public ArrayList<User> getUserByLastName(@PathVariable("lastName") String lastName)
-    {
-        ArrayList<User> ak=userService.retrieveByLastName(lastName);
-//        System.out.println(ak);
-//        return userService.retrieveByName(firstName);
-        return ak;
     }
 
 }

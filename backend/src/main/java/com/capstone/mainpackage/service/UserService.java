@@ -53,12 +53,6 @@ public class UserService {
             //setting unique userID
             user.setUserID(UUID.randomUUID());
 
-//            //setting signUPDate
-//            Date date=new Date();
-//            long time=date.getTime();
-//            Timestamp dateTime=new Timestamp(time);
-//            user.setSignUpDate(dateTime);
-
             String salt = BCrypt.gensalt();
             String hashedPassword = BCrypt.hashpw(user.getPassword() + pepper, salt);
             user.setPassword(hashedPassword);
@@ -71,19 +65,4 @@ public class UserService {
         }
 
     }
-    public ArrayList<User> retrieveAll()
-    {
-        return userRepository.findAll();
-    }
-    public ArrayList<User> retrieveByName(String firstName)
-    {
-//        String firstName;
-        return userRepository.findByFirstName(firstName);
-    }
-    public ArrayList<User> retrieveByLastName(String lastName)
-    {
-//        String firstName;
-        return userRepository.findByLastName(lastName);
-    }
-
 }
