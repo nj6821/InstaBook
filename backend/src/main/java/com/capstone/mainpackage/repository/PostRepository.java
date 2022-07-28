@@ -11,4 +11,6 @@ import java.util.UUID;
 public interface PostRepository extends MongoRepository<Post, UUID> {
     ArrayList<Post> findAll();
     Post findBypostID(UUID postID);
+
+    Post deleteBypostID(UUID postID);
 }

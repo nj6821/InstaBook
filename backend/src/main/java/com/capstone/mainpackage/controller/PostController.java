@@ -41,4 +41,11 @@ public class PostController {
         postService.updatePost(post);
         return "post has been saved successfully!";
     }
+
+    @DeleteMapping("/deletepost")
+    public String deletePost(@RequestBody Post post)
+    {
+        postRepository.deleteBypostID(post.getPostID());
+        return "post deleted successfully";
+    }
 }
