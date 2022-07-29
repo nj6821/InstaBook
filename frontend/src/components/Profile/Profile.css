@@ -1,0 +1,64 @@
+
+.Image{
+    width:160px;
+    height:160px;
+    border-radius: 80px;
+
+}
+
+.maindiv{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0px auto;
+    
+
+}
+
+.nddiv{
+    display: flex;
+    justify-content: "space-around";
+    padding: 2%;
+    border-bottom: 1px solid;
+    border-color: black;
+    width: 100%;
+    padding: 2%;
+    
+    background-color:darkgray;
+}
+
+.nddiv2{
+    display: flex;
+    margin: 2%;
+}
+
+.nddiv3{
+    margin-left: 5%;
+    border-bottom: 1px;
+    border-color: black;
+    margin-top: 2%;
+}
+
+.imagediv{
+    margin-left: 30%;
+}
+
+.Homebutton{
+    margin-top: 4%;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color:darkgray;
+}
+
+.Image1{
+    width: 20%;
+    height: 20%;
+    display: flex;
+    padding: 2%;
+    border: 2px solid black;
+    margin: 2px;
+    background-color: white;
+}

@@ -1,0 +1,17 @@
+.entire-post{
+    margin-left:35%;
+}
+.post-button{
+    color: green;
+    border-radius: 10%;
+    width: 80px;
+}
+h3{
+    color: green;
+}
+.title-div{
+    margin-bottom: 15px;
+}
+::placeholder{
+    color: green;
+}
