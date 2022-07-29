@@ -10,13 +10,14 @@ import java.util.UUID;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/commentService")
+@RequestMapping("/instabook/commentService")
 public class CommentController {
     @Autowired
     CommentService commentService;
 
     @PostMapping("/addcomment")
     public Comment commentOnPost(@RequestBody Comment comment) {
+
         return commentService.addCommentOnPost(comment);
     }
 

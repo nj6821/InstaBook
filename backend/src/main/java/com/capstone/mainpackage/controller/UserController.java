@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @CrossOrigin
 @RestController
 @Controller
-@RequestMapping("/api/userService")
+@RequestMapping("/instabook/userService")
 public class UserController {
     @Autowired
     UserRepository userRepository;
@@ -27,7 +27,7 @@ public class UserController {
     @PostMapping(value="/signup", consumes="application/json", produces="application/json")
     public SignUpResponse signup(@RequestBody User user){
         SignUpResponse signupResponse = userService.register(user);
-        System.out.println(user);
+        //System.out.println(user);
         return signupResponse;
     }
 

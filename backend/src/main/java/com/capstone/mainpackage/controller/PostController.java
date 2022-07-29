@@ -13,7 +13,7 @@ import java.util.UUID;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/postService")
+@RequestMapping("/instabook/postService")
 public class PostController {
 
     @Autowired
@@ -24,6 +24,7 @@ public class PostController {
 
     @PostMapping(value = "/addpost", consumes = "Application/json")
     public String addPost(@RequestBody Post post){
+
         postService.savePost(post);
         return "post has been saved successfully";
     }
