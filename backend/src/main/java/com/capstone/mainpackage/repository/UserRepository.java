@@ -12,5 +12,8 @@ import java.util.UUID;
 public interface UserRepository extends MongoRepository<User, UUID> {
     User findByUserID(UUID userID);
     User findByEmail(String email);
+    ArrayList<User>findAll();
+    ArrayList<User> findByFirstNameContainingIgnoreCase(String firstName);
+    ArrayList<User> findByLastNameContainingIgnoreCase(String firstName);
 
 }

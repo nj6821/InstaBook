@@ -22,6 +22,10 @@ public class PostService{
         long time= date.getTime();
         post.setPostID(UUID.randomUUID());
         post.setPostDate(date);
+        ArrayList<UUID> postLikesUserID= new ArrayList<>();
+        ArrayList<UUID> postCommentID= new ArrayList<>();
+        post.setPostLikesUserID(postLikesUserID);
+        post.setPostCommentID(postCommentID);
         postRepository.save(post);
     }
 

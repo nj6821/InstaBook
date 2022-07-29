@@ -14,7 +14,7 @@ import java.util.UUID;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/api/loginService")
+@RequestMapping("/instabook/loginService")
 public class LogInController {
     @Autowired
     LogInRepository logInRepository;
